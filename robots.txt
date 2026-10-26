@@ -1,26 +1,42 @@
-# ═══════════════════════════════════════════════════════════════
-# ВеоМедиа - Создание и продвижение сайтов
-# ═══════════════════════════════════════════════════════════════
-# 
-# Адрес: Санкт-Петербург, пр. Большевиков, д. 26-1
-# Режим работы: Пн. – Пт.: с 9:00 до 18:00
-# Тех. поддержка: ежедневно до 23-00
-# Телефон: +7 (952) 388-33-87
-# E-mail: inf@veomedia.ru (заявки), sup@veomedia.ru (тех. отдел)
-# 
-# Дата генерации: 26.10.2026, 16:18:23
-# ═══════════════════════════════════════════════════════════════
-
-# =================================================
-# robots.txt
-# Сгенерировано: ВеоМедиа - veomedia.ru
-# Дата: 26.10.2026, 16:14:11
-# =================================================
-
+# --- Общие правила для всех поисковых роботов ---
 User-agent: *
+# Разрешаем обход всего сайта
+Allow: /
+# Запрещаем индексацию служебных и технических страниц
+Disallow: /admin/
+Disallow: /cart/
+Disallow: /checkout/
+Disallow: /profile/
+Disallow: /search/
+# Запрещаем обход ссылок с GET-параметрами (чтобы не плодить дубли)
+Disallow: /*?
+Disallow: /&
 
-# Карта сайта
-Sitemap: https://polinashavrina.github.io/online-theater/sitemap.xml
 
-# Главное зеркало сайта (для Яндекса)
-Host: polinashavrina.github.io
+# --- Правила для Яндекса ---
+User-agent: Yandex
+Allow: /
+Disallow: /admin/
+Disallow: /cart/
+Disallow: /checkout/
+Disallow: /profile/
+Disallow: /search/
+# Указываем Яндексу, какие UTM-метки не учитывать при склейке URL
+Clean-param: utm_source&utm_medium&utm_campaign&utm_content&utm_term&yclid
+# Указываем главное зеркало сайта (ваш GitHub Pages)
+Host: https://PolinaShavrina.github.io/online-theater/
+
+
+# --- Правила для Google ---
+User-agent: Googlebot
+Allow: /
+Disallow: /admin/
+Disallow: /cart/
+Disallow: /checkout/
+Disallow: /profile/
+Disallow: /search/
+
+
+# --- Указываем путь к карте сайта (sitemap.xml) ---
+# ВАЖНО: Не забудьте создать sitemap.xml в корне!
+Sitemap: https://PolinaShavrina.github.io/online-theater/sitemap.xml
